@@ -59,3 +59,72 @@ emailjs.send("service_qiq57qn", "template_24p23nv", {
 
 
 
+const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const dotsContainer = document.querySelector('.carousel-dots');
+
+  let currentIndex = 0;
+  let interval;
+
+  // Create dots
+  slides.forEach((_, index) => {
+    const dot = document.createElement('button');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      currentIndex = index;
+      updateCarousel();
+      resetInterval();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsContainer.children);
+
+  function updateCarousel() {
+    const width = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${currentIndex * width}px)`;
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+  }
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  // Swipe support
+  let startX = 0;
+  let endX = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  track.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if (Math.abs(diff) > 50) { // minimum swipe distance
+      if (diff > 0) {
+        nextSlide(); // swipe left → next
+      } else {
+        prevSlide(); // swipe right → prev
+      }
+      resetInterval();
+    }
+  });
+
+  // Init
+  resetInterval();
+  window.addEventListener('resize', updateCarousel);

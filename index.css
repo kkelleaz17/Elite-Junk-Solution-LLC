@@ -154,7 +154,7 @@ body{
 
 
 
-header{
+header {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -163,51 +163,104 @@ header{
     text-align: center;
     padding-top: 50px !important;
     gap: 30px;
-}
-header img{
+  }
+
+  header img {
     width: 100%;
     max-height: 750px;
     object-fit: cover;
     user-select: none;
     border-radius: 8px;
     filter: drop-shadow(0 0 1px black);
-}
+  }
 
-#Call{
-  appearance: none;
-  background-color: var(--kelly-green);
-  border: 1px solid rgba(27, 31, 35, .15);
-  border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 10px 20px !important;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  white-space: nowrap;
-}
+  #Call {
+    appearance: none;
+    background-color: var(--kelly-green);
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px 20px !important;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
 
-#Call:focus:not(:focus-visible):not(.focus-visible) {
-  box-shadow: none;
-  outline: none;
-}
+  #Call:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+  }
 
-#Call:hover {
-  background-color: #2c974b;
-}
+  #Call:hover {
+    background-color: #2c974b;
+  }
 
-#Call:focus {
-  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
-  outline: none;
-}
+  #Call:focus {
+    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+    outline: none;
+  }
+
+  /* Carousel styles */
+  .carousel {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .carousel img {
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  /* Dots */
+  .carousel-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+
+  .carousel-dots button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .carousel-dots button.active {
+    background: var(--kelly-green);
+  }
+
+
+
+
+
+
+
+
 
 
 
@@ -426,7 +479,11 @@ header img{
   flex-direction: column;
   width: 100%;
 }
-
+.form-group{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .contact-form h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -523,7 +580,7 @@ header img{
     object-fit: cover;
     user-select: none;
     border-radius: 8px;
-    max-height: 800px;
+    max-height: 900px;
     filter: drop-shadow(0 0 1px black);
 }
 
@@ -535,6 +592,30 @@ header img{
 }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
