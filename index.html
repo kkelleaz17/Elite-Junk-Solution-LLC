@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 </head>
 <body>
@@ -23,18 +24,18 @@
                 <a href="mailto:auresoto24@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
                 <a href="#contact">Contact</a>
             </div>
-            <a href="tel:+6232135871" target="_blank" rel="noopener noreferrer" id="navbut">623-213-5871</a>
+            <a href="tel:6232135871" target="_blank" rel="noopener noreferrer" id="navbut">623-213-5871</a>
         </nav>
 
 
     <header>
-        <h1 class="hero"><b>Fast</b>, <b class="green">Affordable</b>, <b class="green">Professional </b>Junk Removal</h1>
-        <p class="subtext">We haul it all — no job too big or small!</p>
+        <h1 class="hero fade-up"><b>Fast</b>, <b class="green">Affordable</b>, <b class="green">Professional </b>Junk Removal</h1>
+        <p class="subtext fade-up">We haul it all — no job too big or small!</p>
 
 
-        <a href="tel:+6232135871" target="_blank" rel="noopener noreferrer" class="herobutton" id="Call">Call 623-213-5871</a>
+        <a href="tel:6232135871" target="_blank" rel="noopener noreferrer" class="herobutton fade-up" id="Call">Call 623-213-5871</a>
 
-        <img src="./assets/headerimg.jpeg" loading="eager"/>
+        <img src="./assets/headerimg.jpeg" loading="eager" class="fade-up2"/>
 
     </header>
 
@@ -47,7 +48,7 @@
 
 
         <div>
-  <section class="about-us">
+  <section class="about-us fade-up2">
          <h1>About <b>Us</b></h1>
             <p>Elite Junk Solution offers a fast and reliable way to reclaim your space! We specialize in comprehensive 
             junk removal services, taking the stress and hassle out of decluttering. From old furniture and appliances to 
@@ -57,22 +58,34 @@
     </section>
 
 
-     <section class="contact-form">
+     <section class="contact-form fade-up2">
   <h1>Have <b>Questions</b> or Want to <b>Schedule</b>?</h1>
   <p>Fill out the form below and we’ll get back to you promptly to answer your questions or schedule your appointment.</p>
 
-  <form action="mailto:kristopheraz@live.com" method="POST" class="form-container">
-    <div class="form-group">
-      <input type="text" name="name" placeholder="Your Name" required>
-    </div>
-    <div class="form-group">
-      <input type="email" name="email" placeholder="Your Email" required>
-    </div>
-    <div class="form-group">
-      <textarea name="message" placeholder="Your Message or Appointment Request" required></textarea>
-    </div>
-    <button type="submit">Send Message</button>
-  </form>
+  <form class="form-container" id="contact-form">
+  <div class="form-group">
+      <label for="appointment">Name:</label>
+    <input type="text" name="from_name" placeholder="Your Name" required>
+  </div>
+  <div class="form-group">
+      <label for="appointment">Email:</label>
+    <input type="email" name="reply_to" placeholder="Your Email" required>
+  </div>
+  <div class="form-group">
+      <label for="appointment">Phone Number:</label>
+
+    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+  </div>
+  <div class="form-group">
+      <label for="appointment">Preferred Time:</label>
+    <input type="datetime-local" name="appointment" placeholder="best time to come in"  required>
+  </div>
+  <div class="form-group">
+    <textarea name="message" placeholder="Your Message or Appointment Request" required></textarea>
+  </div>
+  <button type="submit">Send Message</button>
+</form>
+
   </section>
   <p>Text us photos for a FREE estimate! 623-213-5871</p>
 </div>
