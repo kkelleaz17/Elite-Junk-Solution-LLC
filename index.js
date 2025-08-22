@@ -44,7 +44,8 @@ emailjs.send("service_qiq57qn", "template_24p23nv", {
   reply_to: email.value,
   phone: phone.value,
   appointment: formattedAppointment, // formatted string
-  message: message.value
+  message: message.value,
+  to: ['auresoto24@gmail.com', '6232135871@tmomail.net'],
 })
 .then(() => {
   alert("✅ Message sent successfully!");
@@ -55,3 +56,6 @@ emailjs.send("service_qiq57qn", "template_24p23nv", {
   alert("Something went wrong. Please try again.");
 });
   });
+
+
+
