@@ -63,7 +63,7 @@ Let us help you create a cleaner, more organized environment with our efficient 
 
 </head>
 <body>
-    <div class="divbody">
+    <div class="divbody" id="divbody">
         <nav class="navbar">
             <img src="./assets/logo.jpg" />
             <div>
@@ -87,10 +87,24 @@ Let us help you create a cleaner, more organized environment with our efficient 
         <div class="carousel-track">
          <img src="./assets/headerimg1.jpeg" alt="Junk removal truck" />
         <img src="./assets/headerimg2.jpg" alt="Before and after cleanup" />
+
+<picture>
+  <source srcset="./assets/headerimg55.png" media="(max-width: 1800px)">
+  <img src="./assets/headerimg5.png" alt="Before and after" class="carousel-slide">
+</picture>
+
+<picture>
+  <source srcset="./assets/headerimg66.png" media="(max-width: 1800px)">
+  <img src="./assets/headerimg6.png" alt="Before and after" class="carousel-slide">
+</picture>
+
+
+
+
         <img src="./assets/headerimg3.jpg" alt="Team at work" />
         <img src="./assets/headerimg4.jpg" alt="Team at work" />
-        <img src="./assets/headerimg5.jpg" alt="Team at work" />
-        <img src="./assets/headerimg6.jpg" alt="Team at work" />
+
+
             </div>
     <div class="carousel-dots"></div>
   </div>
@@ -125,7 +139,6 @@ Let us help you create a cleaner, more organized environment with our efficient 
       <label for="appointment">Name:</label>
     <input type="text" name="from_name" placeholder="Your Name" required>
   </div>
-
   <div class="form-group">
       <label for="appointment">Phone Number:</label>
 
@@ -326,7 +339,12 @@ Let us help you create a cleaner, more organized environment with our efficient 
 
 
 </div>
+
+<div class="advertisement" id="ad-banner">
+  <p id="advertisment-text"></p>
+  <span class="close-btn" onclick="document.getElementById('ad-banner').style.display='none'">✖</span>
+</div>
+
+
 </body>
-
 </html>
-

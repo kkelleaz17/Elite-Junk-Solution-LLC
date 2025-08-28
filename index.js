@@ -125,3 +125,44 @@ const track = document.querySelector('.carousel-track');
   // Init
   resetInterval();
   window.addEventListener('resize', updateCarousel);
+
+
+
+const adbanner = document.getElementById('ad-banner')
+const advertismenttext = document.getElementById("advertisment-text")
+
+async function fetchGoogleDoc(fileId) {
+  try {
+    const url = `https://docs.google.com/document/d/${fileId}/export?format=txt`;
+    const res = await fetch(url);
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
+    }
+
+    const text = await res.text();
+    return text;
+  } catch (err) {
+    console.error("Error fetching Google Doc:", err);
+    return null;
+  }
+}
+
+// Example usage:
+const fileId = "1ZxTjOAV-TFSqfqT-4uVR2PqYDu2J64TDyXY4yC3piF0";
+fetchGoogleDoc(fileId).then(text => {
+  if(text){
+    advertismenttext.innerHTML = text
+    adbanner.style.display = "flex"
+    return
+  }else if(text === ""){
+    console.error("Advertisement page is empty. Please add content to display.")
+  } else{
+    console.error("Ad banner failed to load")
+  }
+});
+
+
+
+
+
