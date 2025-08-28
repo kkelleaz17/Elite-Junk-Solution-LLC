@@ -757,4 +757,14 @@ header img, header picture,header picture img{
     cursor: pointer;
     font-size: 20px;
     font-weight: normal;
+
+  }
+
+
+
+  @media only screen and (max-width: 1000px) {
+      .advertisement {
+        height: 60px;
+        padding: 15px 25px;
+      }
   }
