@@ -709,6 +709,12 @@ header img, header picture,header picture img{
   background-color:#E5E5E5;
   gap: 20px;
   padding: 10px !important;
+  width: 30px;
+  height: 30px;
+ text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   font-size: 20px;
 }
@@ -757,11 +763,7 @@ header img, header picture,header picture img{
     cursor: pointer;
     font-size: 20px;
     font-weight: normal;
-
   }
-
-
-
   @media only screen and (max-width: 1000px) {
       .advertisement {
         height: 60px;

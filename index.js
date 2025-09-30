@@ -166,3 +166,47 @@ fetchGoogleDoc(fileId).then(text => {
 
 
 
+function getDeviceType() {
+    const ua = navigator.userAgent.toLowerCase();
+    const isMobileUA =
+      /android|iphone|ipod|blackberry|iemobile|opera mini|mobile/.test(ua);
+
+    const hasTouch =
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0;
+
+    const vw = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    );
+
+    if (isMobileUA || (hasTouch && vw <= 1024)) {
+      return "mobile";
+    }
+    return "desktop";
+  }
+
+  function updateCallLinks() {
+    const type = getDeviceType();
+    const links = [document.getElementById("navbut"), document.getElementById("Call")];
+
+    links.forEach(link => {
+      if (!link) return; // skip if element missing
+
+      if (type === "mobile") {
+        link.href = "tel:6232135871";
+        link.textContent = "Call 623-213-5871";
+      } else {
+        link.href = "#contact";
+        link.textContent = "Contact Us";
+      }
+    });
+  }
+
+  // Run once on load
+  updateCallLinks();
+
+  // Optional: re-run on resize/orientation change
+  window.addEventListener("resize", updateCallLinks);
+  window.addEventListener("orientationchange", updateCallLinks);
